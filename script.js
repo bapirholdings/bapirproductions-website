@@ -23,12 +23,17 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Formspree Integration
+// This connects the library to your specific form ID
 window.formspree = window.formspree || function () { 
     (formspree.q = formspree.q || []).push(arguments); 
 };
 
 formspree('initForm', { 
     formElement: '#contactForm', 
-    formId: 'mykleojk' 
-});
+    formId: 'mykleojk',
+    onSuccess: function(data) {
+        // The library automatically handles showing the [data-fs-success] div,
+        // but you can add custom logic here if needed.
+        console.log('Form submitted successfully');
+    }
 });
