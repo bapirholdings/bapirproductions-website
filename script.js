@@ -21,3 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Formspree Integration
+window.formspree = window.formspree || function () { 
+    (formspree.q = formspree.q || []).push(arguments); 
+};
+
+formspree('initForm', { 
+    formElement: '#contactForm', 
+    formId: 'mykleojk' 
+});
+});
