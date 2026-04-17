@@ -258,3 +258,10 @@ input, textarea {
     max-width: 150px;
     height: auto;
 }
+
+[data-fs-success], [data-fs-error] {
+    display: none;
+    padding: 1rem;
+    border-radius: 4px;
+    background: #f4f4f4;
+}
