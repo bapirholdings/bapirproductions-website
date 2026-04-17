@@ -259,9 +259,19 @@ input, textarea {
     height: auto;
 }
 
+/* ... [Keep all your existing CSS] ... */
+
+/* Ensure the success/error messages display correctly when Formspree toggles them */
 [data-fs-success], [data-fs-error] {
-    display: none;
-    padding: 1rem;
-    border-radius: 4px;
-    background: #f4f4f4;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    margin-top: 1rem;
+}
+
+/* Optional: add a "sending" state for the button */
+[data-fs-submit-btn]:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
 }
