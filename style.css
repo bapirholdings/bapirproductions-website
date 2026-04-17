@@ -49,6 +49,12 @@ nav {
     color: var(--primary-green);
 }
 
+.logo a {
+    text-decoration: none; /* Removes the underline */
+    color: inherit;        /* Keeps the primary-blue color you already set */
+    display: inline-block;
+}
+
 nav ul {
     list-style: none;
     display: flex;
