@@ -20,28 +20,40 @@
     </header>
 
     <section class="content-page">
-        <div class="container">
-            <h1>Get In Touch</h1>
-            <p>Have a project in mind? Let's collaborate and make it happen.</p>
-            
-            <form id="contactForm" class="contact-form">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" placeholder="Tell us about your project" required></textarea>
-                </div>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-            <div id="formStatus"></div>
+    <div class="container">
+        <h1>Get In Touch</h1>
+        <p>Have a project in mind? Let's collaborate and make it happen.</p>
+        
+        <div data-fs-success style="display:none; color: green; margin-bottom: 20px;">
+            Thanks! Your message has been sent successfully.
         </div>
-    </section>
+        <div data-fs-error style="display:none; color: red; margin-bottom: 20px;">
+            Oops! There was a problem submitting your form.
+        </div>
+
+        <form id="contactForm" class="contact-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required data-fs-field>
+                <span data-fs-error="name" style="color: red; font-size: 0.8rem;"></span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required data-fs-field>
+                <span data-fs-error="email" style="color: red; font-size: 0.8rem;"></span>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Tell us about your project" required data-fs-field></textarea>
+                <span data-fs-error="message" style="color: red; font-size: 0.8rem;"></span>
+            </div>
+            <button type="submit" class="btn" data-fs-submit-btn>Send Message</button>
+        </form>
+    </div>
+</section>
+
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+<script src="script.js"></script>
 
     <footer>
         <p>&copy; 2026 Bapir Productions. All rights reserved.</p>
